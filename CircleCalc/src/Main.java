@@ -43,7 +43,7 @@ public class Main {
 				break;
 			case 6:
 				System.out.println("Элементүүдийн нийлбэр: " + arrlist.sum(array));
-
+				break;
 			default:
 				System.out.println("Та буруу тоо оруулсан байна");
 				break;
