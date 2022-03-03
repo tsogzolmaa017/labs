@@ -1,67 +1,40 @@
 
 public class ArrayLinearList {
-
-	public Object[] elements;
+	
+	//array - ийн хэмжээг оноох
 	public int size;
-
-	public boolean isEmpty() {
-		return size == 0;
-	}
-
 	public int size() {
-		return size();
+		return size;
 	}
-
-	public void checkIndex(int index) {
-		if (index < 0 || index >= size) {
-			throw new IndexOutOfBoundsException("index: " + index + "size: " + size);
+	public boolean isEmpty() {
+		if(size()== 0) {
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
-
-	public Object get(int index) {
-		if (isEmpty() == false) {
-			checkIndex(index);
-			return elements[index];
-		}
-		return -1;
+	public int getElement(int[] arr, int index) {
+		int element;
+		element = arr[index];
+		return element;
 	}
-
-	public int indexOf(Object theElement) {
-		for (int i = 0; i < size; i++) {
-			if (elements[i].equals(theElement)) {
+	public int indexOf(int[] arr, int elements) {
+		for(int i = 0; i < size; i++) {
+			if(arr[i] == elements) {
 				return i;
 			}
 		}
 		return -1;
 	}
-
-	public void add(int index, Object theElement) {
-		if (index < 0 || index > size) {
-			throw new IndexOutOfBoundsException("index " + index + "size" + size);
-		}
-		if (size == elements.length) {
-			size = size++;
-			for (int i = size - 1; i >= index; i--) {
-				elements[index] = theElement;
-				size++;
-			}
-		}
+	public void add(int arr[], int index) {
+		arr[size()] = index;
+		size = size + 1;
 	}
-
-	public String toString() {
-		StringBuffer str = new StringBuffer("[");
-		for (int i = 0; i < size; i++) {
-			if(elements[i] == null) {
-				str.append("null, ");
-			}
-			else {
-				str.append(elements[i].toString());
-			}
+	public void toString(int arr[]) {
+		System.out.println("Массивт байгаа утга: ");
+		for(int i = 0; i < this.size(); i++) {
+			System.out.println("Индекс: "+i+ " Элемэнт: " + this.getElement(arr, i ) + " ");
 		}
-		if(size > 0) {
-			str.delete(str.length()-2, str.length());
-		}
-		str.append("]");
-		return new String(str);
 	}
 }
