@@ -28,6 +28,8 @@ public class Main {
 				System.out.println("Массивт нэмэх утга: ");
 				int elements = sc.nextInt();
 				arrlist.add(array, elements);
+				System.out.println("Амжилттай нэмсэн. Жагсаалт: ");
+				arrlist.toString(array);
 				break;
 			case 4:
 				System.out.println("Элемент оруулна уу?");
@@ -39,10 +41,11 @@ public class Main {
 				System.out.println("Хэддүгээр элемэнт устгах вэ. Индекс оруулна уу?");
 				int deleteIndex = sc.nextInt();
 				arrlist.delete(array, deleteIndex);
-				System.out.println("Устгалаа. Жагсаалт: " + arrlist.toString());
+				System.out.println("Устгалаа. Жагсаалт: ");
+				arrlist.toString(array);
 				break;
 			case 6:
-				System.out.println("Элементүүдийн нийлбэр: " + arrlist.sum(array));
+				System.out.println("Элементүүдийн нийлбэр: " + arrlist.Sum(array));
 				break;
 			default:
 				System.out.println("Та буруу тоо оруулсан байна");
