@@ -37,4 +37,17 @@ public class ArrayLinearList {
 			System.out.println("Индекс: "+i+ " Элемэнт: " + this.getElement(arr, i ) + " ");
 		}
 	}
+	public void delete(int arr[], int index) {
+		for(int i = 0; i<size-1; i--) {
+			arr[i] = arr[i - 1];
+		}
+		size = size - 1;
+	}
+	public int sum(int arr[]) {
+		int sum = 0;
+		for(int i = 0; i < this.size(); i++) {
+			sum = sum + this.getElement(arr, i);
+		}
+		return sum;
+	}
 }

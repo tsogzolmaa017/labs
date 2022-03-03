@@ -9,36 +9,40 @@ public class Main {
 		arrlist.add(array, 2);
 		arrlist.add(array, 7);
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1. isString\n2. Size\n3. Add\n4. Get\n5. indexOf\n6. Add");
+		System.out.println("1. isString\n2. Size\n3. Add\n4. IndexOf\n5. Delete\n6. Sum");
 		int songolt = sc.nextInt();
-		
-			switch (songolt) {
-			case 1: {
-				if (arrlist.isEmpty() == false) {
-					arrlist.toString(array);
-				} else {
-					System.out.println("Массив хоосон байна");
-				}
+
+		switch (songolt) {
+		case 1: {
+			if (arrlist.isEmpty() == false) {
+				arrlist.toString(array);
+			} else {
+				System.out.println("РњР°СЃСЃРёРІ С…РѕРѕСЃРѕРЅ Р±Р°Р№РЅР°");
 			}
-				break;
-			case 2:
-				System.out.println("Массивийн урт: " + arrlist.size());
-				break;
-			case 3:
-				System.out.println("Массивт нэмэх утга: ");
-				int elements = sc.nextInt();
-				arrlist.add(array, elements);
-				break;
-			case 4: 
-				System.out.println("Элемент оруулна уу?");
-				int element = sc.nextInt();
-				int index = arrlist.indexOf(array, element);
-				System.out.println("Таны оруулсан элемент нь " + index + " байрлаж байна");
-				break;
-				
-			}
-		
-				
-		
+		}
+			break;
+		case 2:
+			System.out.println("РњР°СЃСЃРёРІРёР№РЅ СѓСЂС‚: " + arrlist.size());
+			break;
+		case 3:
+			System.out.println("РњР°СЃСЃРёРІС‚ РЅСЌРјСЌС… СѓС‚РіР°: ");
+			int elements = sc.nextInt();
+			arrlist.add(array, elements);
+			break;
+		case 4:
+			System.out.println("Р­Р»РµРјРµРЅС‚ РѕСЂСѓСѓР»РЅР° СѓСѓ?");
+			int element = sc.nextInt();
+			int index = arrlist.indexOf(array, element);
+			System.out.println("РўР°РЅС‹ РѕСЂСѓСѓР»СЃР°РЅ СЌР»РµРјРµРЅС‚ РЅСЊ " + index + " Р±Р°Р№СЂР»Р°Р¶ Р±Р°Р№РЅР°");
+			break;
+		case 5:
+			System.out.println("РҐСЌРґРґТЇРіСЌСЌСЂ СЌР»РµРјСЌРЅС‚ СѓСЃС‚РіР°С… РІСЌ. РРЅРґРµРєСЃ РѕСЂСѓСѓР»РЅР° СѓСѓ?");
+			int deleteIndex = sc.nextInt();
+			arrlist.delete(array, deleteIndex);
+			System.out.println("РЈСЃС‚РіР°Р»Р°Р°. Р–Р°РіСЃР°Р°Р»С‚: " + arrlist.toString());
+			break;
+		case 6:
+			System.out.println("Р­Р»РµРјРµРЅС‚ТЇТЇРґРёР№РЅ РЅРёР№Р»Р±СЌСЂ: " + arrlist.sum(array));
+		}
 	}
 }
