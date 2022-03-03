@@ -43,7 +43,7 @@ public class ArrayLinearList {
 		}
 		size = size - 1;
 	}
-	public int Sum(int arr[]) {
+	public int sum(int arr[]) {
 		int sum = 0;
 		for(int i = 0; i < this.size(); i++) {
 			sum = sum + this.getElement(arr, i);

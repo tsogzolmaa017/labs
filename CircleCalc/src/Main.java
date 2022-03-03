@@ -8,6 +8,7 @@ public class Main {
 		arrlist.add(array, 0);
 		arrlist.add(array, 2);
 		arrlist.add(array, 7);
+		arrlist.add(array, 5);
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("1. isString\n2. Size\n3. Add\n4. IndexOf\n5. Delete\n6. Sum");
 			System.out.println("Та сонголтоо оруулна уу?");
@@ -45,7 +46,7 @@ public class Main {
 				arrlist.toString(array);
 				break;
 			case 6:
-				System.out.println("Элементүүдийн нийлбэр: " + arrlist.Sum(array));
+				System.out.println("Элементүүдийн нийлбэр: " + arrlist.sum(array));
 				break;
 			default:
 				System.out.println("Та буруу тоо оруулсан байна");
