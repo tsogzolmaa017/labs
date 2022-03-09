@@ -1,6 +1,5 @@
 
 public class ArrayLinearList {
-	
 	//array - ийн хэмжээг оноох
 	public int size;
 	public int size() {
@@ -38,7 +37,7 @@ public class ArrayLinearList {
 		}
 	}
 	public void delete(int arr[], int index) {
-		for(int i = 0; i<size-1; i--) {
+		for(int i = index; i<size; i++) {
 			arr[i] = arr[i - 1];
 		}
 		size = size - 1;
