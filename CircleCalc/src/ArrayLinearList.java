@@ -1,52 +1,55 @@
+public class ArrayLinearList<G> {
 
-public class ArrayLinearList {
-	//array - ийн хэмжээг оноох
-	public int size;
+	public int size = 0;
+	protected G[] elementData;
+
 	public int size() {
 		return size;
 	}
-	public boolean isEmpty() {
-		if(size()== 0) {
-			return true;
+
+	public void addElement(G[] ob) {
+		this.elementData = ob;
+		size = size + 1;
+	}
+
+	public void toString1() {
+		if (size != 0) {
+			for (int i = 0; i < elementData.length; i++) {
+				System.out.println(i + ". " + elementData[i]);
+			}
 		}
 		else {
-			return false;
+			System.out.println("РҐРѕРѕСЃРѕРЅ Р±Р°Р№РЅР°");
 		}
 	}
-	public int getElement(int[] arr, int index) {
-		int element;
-		element = arr[index];
-		return element;
-	}
-	public int indexOf(int[] arr, int elements) {
-		for(int i = 0; i < size; i++) {
-			if(arr[i] == elements) {
+
+	public int indexOf(int element) {
+		for (int i = 0; i < elementData.length; i++) {
+			if ((int) elementData[i] == element) {
 				return i;
 			}
 		}
 		return -1;
 	}
-	public void add(int arr[], int index) {
-		arr[size()] = index;
-		size = size + 1;
-	}
-	public void toString(int arr[]) {
-		System.out.println("Массивт байгаа утга: ");
-		for(int i = 0; i < this.size(); i++) {
-			System.out.println("Индекс: "+i+ " Элемэнт: " + this.getElement(arr, i ) + " ");
+
+	public G get(int indexE) {
+		G result = null;
+		for (int i = 0; i < elementData.length; i++) {
+			if (elementData[indexE].equals(elementData[i])) {
+				result = elementData[indexE];
+			}
 		}
+		return result;
 	}
-	public void delete(int arr[], int index) {
-		for(int i = index; i<size; i++) {
-			arr[i] = arr[i - 1];
+
+	
+
+	public void remove(int index) {
+		if (get(index) != null) {
+			for (int i = index + 1; i < elementData.length ; i++)
+				elementData[i - 1] = elementData[i];
+			//size = size - 1;
+			elementData[--size] = null; // enable garbage collection
 		}
-		size = size - 1;
-	}
-	public int sum(int arr[]) {
-		int sum = 0;
-		for(int i = 0; i < this.size(); i++) {
-			sum = sum + this.getElement(arr, i);
-		}
-		return sum;
 	}
 }
