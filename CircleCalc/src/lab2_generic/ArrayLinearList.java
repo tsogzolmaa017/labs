@@ -22,8 +22,7 @@ public class ArrayLinearList<G> {
 			for (int i = 0; i < elementData.length; i++) {
 				System.out.println(i + ". " + elementData[i]);
 			}
-		}
-		else {
+		} else {
 			System.out.println("Хоосон байна");
 		}
 	}
@@ -47,15 +46,10 @@ public class ArrayLinearList<G> {
 		return result;
 	}
 
-	
-
 	public void remove(int index) {
-		if (get(index) != null) {
-			for (int i = index + 1; i <= elementData.length; i++)
-				elementData[i - 1] = elementData[i];
-			//size = size - 1;
-			//elementData[--size] = null; // enable garbage collection
-		}
+		for (int i = index + 1; i <= elementData.length; i++)
+			elementData[i - 1] = elementData[i];
+		elementData[--size] = null; // enable garbage collection
 	}
 
 }
