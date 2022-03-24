@@ -67,7 +67,7 @@ public class Main {
 				songolt = sc.nextInt();
 			}
 		} catch (Exception e) {
-			System.out.println("ALDAATAI BAINA");
+			System.out.println(" ALDAA !");
 		}
 
 	}

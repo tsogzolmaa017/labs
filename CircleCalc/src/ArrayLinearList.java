@@ -19,7 +19,7 @@ public class ArrayLinearList<G> {
 			}
 		}
 		else {
-			System.out.println("Хоосон байна");
+			System.out.println("Массив хоосон байна");
 		}
 	}
 
@@ -41,9 +41,7 @@ public class ArrayLinearList<G> {
 		}
 		return result;
 	}
-
 	
-
 	public void remove(int index) {
 		if (get(index) != null) {
 			for (int i = index + 1; i < elementData.length ; i++)
