@@ -48,6 +48,7 @@ public class ArrayLinearList<G> {
 				elementData[i - 1] = elementData[i];
 			//size = size - 1;
 			elementData[--size] = null; // enable garbage collection
+			System.out.println("Амжилттай устгалаа !");
 		}
 	}
 }

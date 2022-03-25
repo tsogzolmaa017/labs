@@ -44,7 +44,7 @@ public class Main {
 						System.out.println("Энэ элемэнт массивт алга");
 					} else {
 						list.remove(deleteElement);
-						System.out.println("Амжилттай устгалаа !");
+						
 					}
 					break;
 				case 6:
