@@ -31,12 +31,6 @@ public class ArrayLinearList<G> {
 		}
 		return -1;
 	}
-
-	void checkIndex(int index) {
-		if (index < 0 || index >= size)
-			throw new IndexOutOfBoundsException("index = " + index + "  size = " + size);
-	}
-
 	public G get(int indexE) {
 		G result = null;
 		if (indexE > -1 && indexE < size) {

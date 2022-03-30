@@ -52,7 +52,7 @@ public class Main {
 					if (list.get(searchIndex) == null) {
 						System.out.println("Уг индескт элемент алга байна");
 					} else {
-						System.out.println(searchIndex + " дэх элемэнт нь " + list.get(searchIndex));
+						System.out.println(searchIndex + " индеск дэх элемэнт нь " + list.get(searchIndex));
 					}
 					break;
 				case 7:
