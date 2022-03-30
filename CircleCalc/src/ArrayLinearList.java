@@ -9,22 +9,22 @@ public class ArrayLinearList<G> {
 
 	public void addElement(G[] ob) {
 		this.elementData = ob;
-		size = size + 1;
+		size = elementData.length;
+
 	}
 
 	public void toString1() {
 		if (size != 0) {
-			for (int i = 0; i < elementData.length; i++) {
+			for (int i = 0; i < size; i++) {
 				System.out.println(i + ". " + elementData[i]);
 			}
-		}
-		else {
+		} else {
 			System.out.println("Массив хоосон байна");
 		}
 	}
 
 	public int indexOf(int element) {
-		for (int i = 0; i < elementData.length; i++) {
+		for (int i = 0; i < size; i++) {
 			if ((int) elementData[i] == element) {
 				return i;
 			}
@@ -32,23 +32,33 @@ public class ArrayLinearList<G> {
 		return -1;
 	}
 
+	void checkIndex(int index) {
+		if (index < 0 || index >= size)
+			throw new IndexOutOfBoundsException("index = " + index + "  size = " + size);
+	}
+
 	public G get(int indexE) {
 		G result = null;
-		for (int i = 0; i < elementData.length; i++) {
-			if (elementData[indexE].equals(elementData[i])) {
-				result = elementData[indexE];
+		if (indexE > -1 && indexE < size) {
+			for (int i = 0; i < elementData.length; i++) {
+				if (elementData[indexE].equals(elementData[i])) {
+					result = elementData[indexE];
+				}
 			}
+		}
+		else
+		{
+			return result;
 		}
 		return result;
 	}
-	
+
 	public void remove(int index) {
-		if (get(index) != null) {
-			for (int i = index + 1; i < elementData.length ; i++)
-				elementData[i - 1] = elementData[i];
-			//size = size - 1;
-			elementData[--size] = null; // enable garbage collection
-			System.out.println("Амжилттай устгалаа !");
+		elementData[index] = null;
+		for (int i = index; i < size - 1; i++) {
+			elementData[i] = elementData[i + 1];
 		}
+		size = size - 1;
+		System.out.println("Амжилттай");
 	}
 }

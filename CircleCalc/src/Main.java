@@ -37,14 +37,12 @@ public class Main {
 					}
 					break;
 				case 5:
-					System.out.println("Устгах элемэнт оруулна уу?");
-					int deleteElement = sc.nextInt();
-					int saveIndex = list.indexOf(deleteElement);
-					if (saveIndex == -1) {
-						System.out.println("Энэ элемэнт массивт алга");
+					System.out.println("Устгах элемэнтийн индекс оруулна уу?");
+					int deleteIndex = sc.nextInt();
+					if (list.get(deleteIndex) == null) {
+						System.out.println("Энэ индекст утга алга");
 					} else {
-						list.remove(deleteElement);
-						
+						list.remove(deleteIndex);
 					}
 					break;
 				case 6:
